@@ -1,0 +1,60 @@
+.carousel-item {
+    height: 100vh;
+    animation-name: example;
+    animation-duration: 3s;
+}
+
+@keyframes example {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    80% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(10, 10);
+        opacity: 0.1;
+    }
+}
+
+.top {
+    position: relative;
+    height: 100vh;
+}
+
+.top-header {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+a.nav-link {
+    color: white !important;
+    font-size: 14px;
+    margin: 10px;
+    padding: 8px 2px 2px 2px !important;
+    font-family: "Poppins", sans-serif;
+}
+
+.active > a.nav-link {
+    border-bottom: 2px solid gold;
+}
+
+.navbar-brand > img {
+    width: 150px;
+}
+
+.down {
+    margin-top: 30px;
+}
+
+.bg {
+    background-position: center !important;
+    background-size: 100% 100% !important;
+}
