@@ -16,12 +16,9 @@ class CreateJoborderitemsTable extends Migration
         Schema::create('joborderitems', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('particular');
-            $table->decimal('length');
-            $table->decimal('height');
             $table->decimal('rate');
             $table->decimal('qty');
             $table->decimal('total');
-            $table->integer('status');
             $table->text('type');
             $table->text('remark');
             $table->text('image')->nullable();

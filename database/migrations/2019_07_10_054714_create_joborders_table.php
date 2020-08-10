@@ -17,8 +17,8 @@ class CreateJobordersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('s_n');
             $table->text('date');
-            $table->text('order_received_date');
-            $table->text('order_delever_date');
+            $table->text('from_date');
+            $table->text('to_date');
             $table->integer('status');
             $table->decimal('grand_total');
             $table->decimal('advance')->nullable();
