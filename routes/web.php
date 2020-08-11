@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +19,9 @@ Route::get('/', function () {
 Route::get('/gall/{id}', function ($id) {
     $images = \App\images::where('gallery_id', $id)->get();
     $i = [];
+    $driver = env('FILESYSTEM_DRIVER', 'local');
     foreach ($images as $image) {
-        $path = public_path('') . '/' . $image->path;
+        $path = Storage::disk($driver)->path($image->path);
         $im = [];
         $im['path'] = $image->path;
         $data = getimagesize($path);
