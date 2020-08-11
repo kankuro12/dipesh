@@ -10,7 +10,7 @@
             <form method="POST" enctype="multipart/form-data" action="/image/add/{{$gallery->id}}">
                 @csrf
                 <input multiple type="file" accept="image/*" name="images[]" multiple class="form-input" required />
-                <input type="submit" class="mt-2 btn btn-primary" value="add slider" />
+                <input type="submit" class="mt-2 btn btn-primary" value="add Images" />
             </form>
         </div>
     </div>

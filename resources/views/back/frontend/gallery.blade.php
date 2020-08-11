@@ -25,7 +25,7 @@
                         <hr>
                         {{$image->category}}
                         <hr>
-                        <a href="/images/{{$image->id}}" class="btn btn-primary">Manage Images</a>
+                        <a href="/image/{{$image->id}}" class="btn btn-primary">Manage Images</a>
                         <a href="/gallery/del/{{$image->id}}" class="btn btn-danger">Delete</a>
                     </p>
                 </div>
