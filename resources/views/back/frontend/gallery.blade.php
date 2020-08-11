@@ -7,7 +7,7 @@
 <div class="p-3">
     <div class="card p-4">
         <div id="form">
-            <form method="POST" enctype="multipart/form-data" action="/gallery/add/">
+            <form method="POST" enctype="multipart/form-data" action="/gallery/add">
                 @csrf
                 <input name="category" placeholder="Title" required />
                 <input type="file" accept="image/*" name="image" class="form-input" required />
