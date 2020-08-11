@@ -13,7 +13,7 @@
 
     <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
      In the folder of skin CSS file there are also:
-     - .png and .svg icons sprite, 
+     - .png and .svg icons sprite,
      - preloader.gif (for browsers that do not support CSS animations) -->
     <link rel="stylesheet" href="{{asset('front/gallery/default-skin/default-skin.css')}}">
 
@@ -29,14 +29,14 @@
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-        <!-- Background of PhotoSwipe. 
+        <!-- Background of PhotoSwipe.
          It's a separate element as animating opacity is faster than rgba(). -->
         <div class="pswp__bg"></div>
 
         <!-- Slides wrapper with overflow:hidden. -->
         <div class="pswp__scroll-wrap">
 
-            <!-- Container that holds slides. 
+            <!-- Container that holds slides.
             PhotoSwipe keeps only 3 of them in the DOM to save memory.
             Don't modify these 3 pswp__item elements, data is added later on. -->
             <div class="pswp__container">
@@ -96,7 +96,7 @@
 
     <script>
         var pswpElement = document.querySelectorAll('.pswp')[0];
-        
+
         // build items array
         var items = [
             @foreach($images as $image)
@@ -107,22 +107,22 @@
         },
         @endforeach
         ];
-        
+
         // define options (if needed)
         var options = {
         // optionName: 'option value'
         // for example:
         index: 0 // start at first slide
         };
-        
+
         // Initializes and opens PhotoSwipe
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
+        gallery.listen('close', function() {
 
-        gallery.listen('close', function() { 
-            
             window.location.href="{{url('/')}}";
         });
+        gallery.init();
+
     </script>
 </body>
 
