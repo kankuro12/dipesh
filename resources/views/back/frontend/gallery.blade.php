@@ -1,15 +1,15 @@
 @extends('layouts.back.index')
-@section('title',"Gallery")
-@section('brand',"Gallery")
+@section('title',"Portfollio")
+@section('brand',"Portfollio")
 @section('style')
 @endsection
 @section('content')
 <div class="p-3">
     <div class="card p-4">
         <div id="form">
-            <form method="POST" enctype="multipart/form-data" action="/gallery/add">
+            <form method="POST" enctype="multipart/form-data" action="/gallery/add/">
                 @csrf
-                <input name="category" placeholder="Category" required />
+                <input name="category" placeholder="Title" required />
                 <input type="file" accept="image/*" name="image" class="form-input" required />
                 <input type="submit" class="mt-2 btn btn-primary" value="add image" />
             </form>

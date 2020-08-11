@@ -178,75 +178,7 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-md-2" style="margin-top:3px;">
-                                <h5 class="text-danger"> If No Dimension:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check checkbox-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" id="singlejob" onchange="
-                                                                if(this.checked){
-                                                                     document.getElementById('item_height').disabled=true;
-                                                                     document.getElementById('item_height_in').disabled=true;
-                                                                     document.getElementById('item_width').disabled=true;
-                                                                     document.getElementById('item_width_in').disabled=true;
-                                                                     document.getElementById('item_size').disabled=true;
-                                                                }else{
-                                                                     document.getElementById('item_height').disabled=false;
-                                                                     document.getElementById('item_height_in').disabled=false;
-                                                                     document.getElementById('item_width').disabled=false;
-                                                                     document.getElementById('item_width_in').disabled=false;
-                                                                     document.getElementById('item_size').disabled=false;
-                                                                }
-                                                                " type="checkbox" checked>
-                                        <span class="form-check-sign"></span>
-                                        For Single Type Order
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Height in feet</label>
-                                    <input onkeyup="calculateSize(); calculateItemSize();" type="number"
-                                        placeholder="Height" class="form-control dis" id="item_height" value="0">
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Height in inch</label>
-                                    <input onkeyup="calculateSize(); calculateItemSize();" type="number"
-                                        placeholder="Height" class="form-control dis" id="item_height_in" value="0">
-                                    <input type="hidden" id="item_height_in1" value="0" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>width in feet</label>
-                                    <input onkeyup="calculateSize(); calculateItemSize();" type="number"
-                                        placeholder="Width" class="form-control dis" id="item_width" value="0">
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>width in inch</label>
-                                    <input onkeyup="calculateSize(); calculateItemSize();" type="number"
-                                        placeholder="Width" class="form-control dis" id="item_width_in" value="0">
-                                    <input type="hidden" id="item_width_in1" value="0" />
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                            <div class="col-md-3">
+                            <div class="col-md-4">
 
                                 <div class="form-group">
                                     <label>Qty</label>
@@ -255,15 +187,9 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Size</label>
-                                    <input onkeyup="calculateItemSize();" type="number" placeholder="Size"
-                                        class="form-control dis" id="item_size" value="0">
-                                </div>
-                            </div>
 
-                            <div class="col-md-3">
+
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rate</label>
                                     <input onkeyup="calculateItemSize();" type="number" placeholder="Rate"
@@ -272,7 +198,7 @@
                             </div>
 
 
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Total</label>
                                     <input type="number" placeholder="Total" class="form-control" id="item_total" />
@@ -312,9 +238,9 @@
                     <table class="table" id="item_table">
                         <tr>
                             <th>Particular</th>
-                            <th>Size</th>
+
                             <th>Qty</th>
-                            <th>Sqft</th>
+
                             <th>Rate</th>
                             <th>Total</th>
                             <th>Remarks</th>
@@ -433,10 +359,8 @@
             }
             html="<tr id='row-"+i+"'>";
             html+="<td>"+$("#item_particular").val()+"<input type='hidden' name='item_particular_"+i+"' value='"+$("#item_particular").val()+"'/></td>" ;
-            html+="<td>"+(parseFloat($("#item_height").val()) + parseFloat($("#item_height_in1").val()))+" X "+(parseFloat($("#item_width").val()) + parseFloat($("#item_width_in1").val()))+"<input type='hidden' name='item_height_"+i+"' value='"+(parseFloat($("#item_height").val()) + parseFloat($("#item_height_in1").val()))+"'/><input type='hidden' name='item_width_"+i+"' value='"+(parseFloat($("#item_width").val()) + parseFloat($("#item_width_in1").val()))+"'/></td>";
+       
             html+="<td>"+$("#item_qty").val()+"<input type='hidden' name='item_qty_"+i+"' value='"+$("#item_qty").val()+"'/></td>" ;
-
-            html+="<td>"+$("#item_size").val()+"<input type='hidden' name='item_size_"+i+"' value='"+$("#item_size").val()+"'/></td>" ;
 
             html+="<td>"+$("#item_rate").val()+"<input type='hidden' name='item_rate_"+i+"' value='"+$("#item_rate").val()+"'/></td>" ;
 
@@ -448,14 +372,8 @@
 
             html+="</tr>";
             $("#item_table").append(html);
-
             $("#item_particular").val("");
-            $("#item_height").val("0");
-            $("#item_height_in").val("0");
-            $("#item_width").val("0");
-            $("#item_width_in").val("0");
-            $("#item_qty").val("0");
-            $("#item_size").val("");
+            $("#item_qty").val("0"); 
             $("#item_total").val("0");
             $("#item_remarks").val("");
             $("#item_particular").focus();
@@ -499,25 +417,11 @@
 
         }
 
-        function calculateSize(){
-            var hfeet = parseFloat($("#item_height").val());
-            var wfeet = parseFloat($("#item_width").val());
-            var hinch = parseFloat($("#item_height_in").val()/12);
-            var winch = parseFloat($("#item_width_in").val()/12);
-
-            var total = (hfeet + hinch) * (wfeet + winch);
-
-            $("#item_size").val(total * $("#item_qty").val());
-            $('#item_height_in1').val(hinch);
-            $('#item_width_in1').val(winch);
-        }
+       
         function calculateItemSize(){
-            var size = $("#item_size").val()
-            if(size!=0){
-            $("#item_total").val( $("#item_rate").val() * size);
-            }else{
+            
                $('#item_total').val( $('#item_qty').val()*$('#item_rate').val());
-            }
+            
         }
 
         function calculateTotal(){

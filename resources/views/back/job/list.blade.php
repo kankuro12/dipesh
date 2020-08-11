@@ -26,8 +26,8 @@
                                     href="{{ url('/customer/job_orders/'.$job->customer->id) }}">{{$job->customer->name}}</a>
                             </td>
                             <td><a href="/customer/order_items/{{$job->id}}">{{$job->id}}</a></td>
-                            <td>{{$job->order_received_date}}</td>
-                            <td>{{$job->order_delever_date}}</td>
+                            <td>{{$job->from_date}}</td>
+                            <td>{{$job->to_date}}</td>
                             <td>{{$job->netTotal()}}</td>
                             <td>{{$job->due}}</td>
                             <td><a title="Edit" class="btn btn-link btn-warning table-action edit"

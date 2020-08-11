@@ -26,12 +26,12 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
 
-    <div class="top">
+    <div class="top" id="top">
         <div class="top-header">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" id="navbar">
                     <a class="navbar-brand" href="#"><img src="a.jpg"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,70 +39,86 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home </a>
+                            <li class="nav-item ">
+                                <a class="nav-link" data-scroll href="#top">Home </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Portfolio</a>
+                                <a class="nav-link" data-scroll href="#portfolio">Portfolio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">services</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                                <a class="nav-link" data-scroll href="#services">services</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" data-scroll href="#pricing">Pricing</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-scroll href="#contact">Contact</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
+
         </div>
-        <div id="carouselExampleCaptions" class="carousel slide h-100" data-ride="carousel">
+
+        <div id="c" class="carousel slide h-100" data-ride="carousel">
             <div class="carousel-inner h-100">
-                <div class="carousel-item h-100 bg active" data-interval="3000"
-                    style="background: url(https://wallpaperaccess.com/full/391239.jpg);">
-                </div>
-                <div class="carousel-item h-100 bg" data-interval="3000"
-                    style="background: url(https://i.pinimg.com/originals/9f/92/12/9f921271e5473567938a1de95bbf149f.jpg);">
-                </div>
-                <div class="carousel-item h-100 bg" data-interval="3000" style="
-                background: url(https://wallpapersko.com/wp-content/uploads/2018/06/2k-wallpaper.jpg);">
+                <?php $i=0;?>
+                @foreach (\App\Slider::all() as $item)
+                <div class="carousel-item h-100 bg {{$i==0?'active':''}}" data-interval="5000" style="
+                      background: url({{asset($item->image)}});
+                    "></div>
+                <?php $i+=1;?>
+                @endforeach
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="carousel-indicators w-100 p-0 m-0" style="bottom: 0; background: rgba(0, 0, 0, 0.4);">
+            <div class="m-3">
+                <div class="row">
+                    <div class="col-md-6  font-size-bold" style="color: gold;">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                            explicabo sit fuga amet, esse illo aspernatur quo placeat
+                        </p>
+                        <p style="color: white;">address heere and now where</p>
+                    </div>
+                    <div class="col-md-6 text-right down" style="vertical-align: middle;">
+                        <a data-scroll href="#portfolio"><img src="{{asset('front/down.png')}}" /></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+
     </div>
+    @include('front.portfolio')
+    @include('front.services')
 
-    <div class="carousel-indicators w-100 p-0 m-0" style="bottom: 0; background: rgba(0, 0, 0, 0.4);">
-        <div class=" m-3">
-            <div class="row">
-                <div class="col-md-6 text-white font-size-bold">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                        explicabo sit fuga amet, esse illo aspernatur quo placeat
-                    </p>
-                    <p style="color: gold;">address heere and now where</p>
-                </div>
-                <div class="col-md-6 text-right down" style="vertical-align: middle;">
-                    <i class="fa fa-arrow-circle-down fa-3x" style="color: gold; margin-top: auto;"
-                        aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js">
+    </script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
 </body>
 
 </html>

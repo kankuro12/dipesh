@@ -15,6 +15,22 @@ Route::get('/', function () {
     return view('front.index');
 });
 
+Route::get('/gall/{id}', function ($id) {
+    $images = \App\images::where('gallery_id', $id)->get();
+    $i = [];
+    foreach ($images as $image) {
+        $path = public_path('') . '/' . $image->path;
+        $im = [];
+        $im['path'] = $image->path;
+        $data = getimagesize($path);
+        $im['w'] = $data[0];
+        $im['h'] = $data[1];
+        array_push($i, $im);
+    }
+
+    return view('front.gallery', ["images" => $i]);
+});
+
 
 Route::get('/billing/api/{id}', 'ApiController@billingApi');
 Route::get('/bills/api/{id}', 'ApiController@billsApi');
@@ -155,3 +171,7 @@ Route::get('/service/del/{service}', 'FrontendController@service_del');
 Route::get('/testimonial', 'FrontendController@testimonials');
 Route::post('/testimonial/add', 'FrontendController@testimonial_add');
 Route::get('/testimonial/del/{testimonial}', 'FrontendController@testimonial_del');
+
+Route::get('/image/{gallery}', 'FrontendController@images');
+Route::post('/image/add/{gallery}', 'FrontendController@image_add');
+Route::get('/image/del/{img}', 'FrontendController@image_del');

@@ -1,10 +1,14 @@
 @media only screen and (max-width: 480px),
-    only screen and (max-device-width: 480px) {
+only screen and (max-device-width: 480px) {
     .down {
         margin-top: 0px;
     }
 
     .bg {
         background-size: auto 100% !important;
+    }
+
+    .top-header {
+        background: rgba(0, 0, 0, 0.8);
     }
 }

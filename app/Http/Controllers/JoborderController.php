@@ -25,7 +25,7 @@ class JoborderController extends Controller
      */
     public function index()
     {
-        $jobs = Joborder::where('status', '!=', 4)->get();
+        $jobs = Joborder::where('status', 0)->get();
         return view('back.job.list')->with(compact('jobs'));
     }
 
@@ -78,8 +78,8 @@ class JoborderController extends Controller
         $joborder = new Joborder();
         $joborder->s_n = 0;
         $joborder->date = date("y/M/d H m");
-        $joborder->order_received_date = $request->order_received_date;
-        $joborder->order_delever_date = $request->order_delever_date;
+        $joborder->from_date = $request->order_received_date;
+        $joborder->to_date = $request->order_delever_date;
         $joborder->grand_total = $request->grand_total;
         $joborder->advance = $request->advance > $request->grand_total ? $request->grand_total : $request->advance;
         $joborder->due = $request->due;
@@ -115,16 +115,15 @@ class JoborderController extends Controller
         foreach ($counters as $key => $value) {
 
             $joborderitem = new Joborderitem();
-            $joborderitem->length = (float) $data['item_width_' . $value];
-            $joborderitem->height = (float)$data['item_height_' . $value];
+
             $joborderitem->particular = $data['item_particular_' . $value];
             $joborderitem->rate = (int)$data['item_rate_' . $value];
             $joborderitem->qty = (int)$data['item_qty_' . $value];
-            $joborderitem->type = (int)$data['item_type_' . $value];
+            $joborderitem->type = "_";
             $joborderitem->total = (float)$data['item_total_' . $value];
             $joborderitem->joborder_id = (int)$joborder->id;
             $joborderitem->remark = $data['item_remarks_' . $value] ?? "";
-            $joborderitem->status = 0;
+            // $joborderitem->status = 0;
             // dd($joborderitem);
             $joborderitem->save();
         }

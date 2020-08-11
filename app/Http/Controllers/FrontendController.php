@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Slider;
 use App\Gallery;
+use App\images;
 use App\Services;
 use App\Testimonial;
+
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
@@ -121,6 +123,36 @@ class FrontendController extends Controller
     public function testimonial_del(Testimonial $testimonial)
     {
         $testimonial->delete();
+        return redirect()->back();
+    }
+    //images
+    public function images(Gallery $gallery)
+    {
+        return view('back.frontend.images', ['gallery' => $gallery]);
+    }
+
+    public function image_add(Gallery $gallery, Request $request)
+    {
+        $t = time();
+        $i = 1;
+        foreach ($request->file('images') as $index => $item) {
+            // echo $index . "<br>";
+            $imageName =  $t . $i . '.' . $item->getClientOriginalExtension();
+            // echo $imageName . "<br>";
+            $item->move(public_path('sliders'), $imageName);
+            $image = new images();
+            $image->path = 'sliders/' . $imageName;
+            $image->gallery_id = $gallery->id;
+            $image->save();
+            $i += 1;
+        }
+
+        return redirect()->back();
+    }
+
+    public function image_del(images $img)
+    {
+        $img->delete();
         return redirect()->back();
     }
 }
