@@ -33,7 +33,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
 
-                    <a href="#" class="simple-text logo-normal" style="margin-left:1.5rem;">
+                    <a href="#" class="simple-text logo-normal text-center" style="margin-left:1.5rem;">
                         Urban Research<br> Photography
                     </a>
                 </div>
@@ -346,7 +346,7 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ url('/gallery') }}">
                                         <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Gallery</span>
+                                        <span class="sidebar-normal">Portfolio</span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
@@ -361,6 +361,7 @@
                                         <span class="sidebar-normal">Testimonials</span>
                                     </a>
                                 </li>
+
 
                             </ul>
                         </div>

@@ -11,7 +11,7 @@
                 @csrf
                 <input name="category" placeholder="Title" required />
                 <input type="file" accept="image/*" name="image" class="form-input" required />
-                <input type="submit" class="mt-2 btn btn-primary" value="add image" />
+                <input type="submit" class="mt-2 btn btn-primary" value="add Protfolio" />
             </form>
         </div>
     </div>
@@ -22,7 +22,10 @@
                 <div class=" card w-100 h-100 p-4">
                     <img src="{{$image->image}}" class="w-100 pb-3" />
                     <p>
+                        <hr>
                         {{$image->category}}
+                        <hr>
+                        <a href="/gall/{{$image->id}}" class="btn btn-primary">Delete</a>
                         <a href="/gallery/del/{{$image->id}}" class="btn btn-danger">Delete</a>
                     </p>
                 </div>
