@@ -34,16 +34,16 @@
                 <div class="logo">
 
                     <a href="#" class="simple-text logo-normal" style="margin-left:1.5rem;">
-                        Surya Advertising
+                        Urban Research Photography
                     </a>
                 </div>
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ URL::to('back/img/surya.png') }}" />
+                        {{-- <img src="{{ URL::to('back/img/surya.png') }}" /> --}}
                     </div>
                     <div class="info ">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                            <span>{{ config('app.name', '') }}
+                            <span>{{  Auth::user()->name }}
                                 <b class="caret"></b>
                             </span>
                         </a>
