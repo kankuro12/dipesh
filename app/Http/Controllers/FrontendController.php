@@ -26,10 +26,9 @@ class FrontendController extends Controller
             'image' => 'required',
         ]);
 
-        $imageName = time() . '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move(public_path('sliders'), $imageName);
+
         $slider = new Slider();
-        $slider->image = 'sliders/' . $imageName;
+        $slider->image = $request->file('image')->store('sliders');
         $slider->save();
 
         return redirect()->back();
@@ -54,12 +53,12 @@ class FrontendController extends Controller
             'image' => 'required',
         ]);
 
-        $imageName = time() . '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move(public_path('sliders'), $imageName);
+
         $gallery = new Gallery();;
         $gallery->category = $request->category;
         // $gallery->description = $request->description;
-        $gallery->image = 'sliders/' . $imageName;
+
+        $gallery->image = $request->file('image')->store('sliders');
         $gallery->save();
 
         return redirect()->back();
@@ -84,12 +83,12 @@ class FrontendController extends Controller
             'image' => 'required',
         ]);
 
-        $imageName = time() . '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move(public_path('sliders'), $imageName);
+
         $service = new services();
         $service->title = $request->title;
         $service->description = $request->description;
-        $service->image = 'sliders/' . $imageName;
+        $service->image = $request->file('image')->store('sliders');
+
         $service->save();
 
         return redirect()->back();
@@ -136,12 +135,9 @@ class FrontendController extends Controller
         $t = time();
         $i = 1;
         foreach ($request->file('images') as $index => $item) {
-            // echo $index . "<br>";
-            $imageName =  $t . $i . '.' . $item->getClientOriginalExtension();
-            // echo $imageName . "<br>";
-            $item->move(public_path('sliders'), $imageName);
+
             $image = new images();
-            $image->path = 'sliders/' . $imageName;
+            $image->path = $item->store('sliders');
             $image->gallery_id = $gallery->id;
             $image->save();
             $i += 1;
