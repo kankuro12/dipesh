@@ -37,12 +37,7 @@
                         Urban Research<br> Photography
                     </a>
                 </div>
-                <div class="user">
-                    <div class="photo">
-                        {{-- <img src="{{ URL::to('back/img/surya.png') }}" /> --}}
-                    </div>
 
-                </div>
                 <ul class="nav">
                     <li class="nav-item ">
                         <a class="nav-link" href="{{ url('/admin') }}">
