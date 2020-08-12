@@ -125,7 +125,7 @@
         gallery.listen('destroy', function() {
         // code here
         console.log("wtf1");
-        window.location.replace("/");
+        window.location.href="/";
         });
 
 
