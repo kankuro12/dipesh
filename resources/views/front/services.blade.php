@@ -8,7 +8,7 @@
             </h1>
 
             <div class="row mt-5">
-                @foreach (\App\Service::all() as $item)
+                @foreach (\App\Services::all() as $item)
 
                 <div class="col-md-4 mb-3 ">
                     <div class="h-100 w-100 overlay-wrapper">
