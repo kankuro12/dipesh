@@ -85,6 +85,8 @@ a.nav-link {
 }
 
 .overlay-wrapper {
+    font-family: "Poppins", sans-serif;
+
     position: relative;
     cursor: pointer;
 }
@@ -110,3 +112,5 @@ a.nav-link {
 .overlay-wrapper:hover>.overlay {
     display: block;
 }
+
+/* services */
