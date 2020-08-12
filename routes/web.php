@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/gall/{id}', function ($id) {
     $images = \App\images::where('gallery_id', $id)->get();
     $i = [];
-    $driver = env('FILESYSTEM_DRIVER', 'local');
+    $driver = env('FILESYSTEM_DRIVER', 'public');
     foreach ($images as $image) {
         $path = Storage::disk($driver)->path($image->path);
         $im = [];
