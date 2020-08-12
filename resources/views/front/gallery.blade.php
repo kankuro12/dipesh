@@ -54,7 +54,8 @@
 
                     <div class="pswp__counter"></div>
 
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button onclick="window.location.href='/';" class="pswp__button pswp__button--close"
+                        title="Close (Esc)"></button>
 
                     <button class="pswp__button pswp__button--share" title="Share"></button>
 
