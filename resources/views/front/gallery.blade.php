@@ -117,15 +117,15 @@
 
         // Initializes and opens PhotoSwipe
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.listen('close', function() {
-            console.log("wtf");
-            window.location.replace("{{url('/')}}");
-            // window.location.href=;
-        });
+        // gallery.listen('close', function() {
+        //     console.log("wtf");
+        //     window.location.replace("/");
+        //     // window.location.href=;
+        // });
         gallery.listen('destroy', function() {
         // code here
         console.log("wtf1");
-        window.location.replace("{{url('/')}}");
+        window.location.replace("/");
         });
 
 
