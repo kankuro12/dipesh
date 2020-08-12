@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="text-center header mb-3">
                 <span>
-                    OUR PORTFOLIO
+                    OUR Services
                 </span>
             </h1>
 
