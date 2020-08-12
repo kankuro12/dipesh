@@ -122,6 +122,13 @@
             window.location.replace("{{url('/')}}");
             // window.location.href=;
         });
+        gallery.listen('destroy', function() {
+        // code here
+        console.log("wtf1");
+        window.location.replace("{{url('/')}}");
+        });
+
+
         gallery.init();
 
     </script>
