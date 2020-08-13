@@ -1,7 +1,7 @@
 <div id="contact">
     <div class="container">
         <div class="row">
-            <div class="col-md-7 m-0 pr-md-0 ">
+            <div class="col-md-5 m-0 pr-md-0 ">
                 <div class="card h-100 w-100 p-5">
                     <h1 class="text-center text-md-left" style="color:#22163D;font-weight:700;">CONTACT US</h1>
                     <p class="mt-5 mb-3">
@@ -30,7 +30,7 @@
 
             </div>
 
-            <div class="col-md-5 p-md-0 ">
+            <div class="col-md-7 p-md-0 ">
                 <div class="p-3 h-100" style="background:#22163D;">
 
                     <h2 class="text-uppercase mt-5 font-weight-bold text-white ">Message Us</h2>
