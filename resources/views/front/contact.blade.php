@@ -33,7 +33,7 @@
             <div class="col-md-5 p-md-0 ">
                 <div class="p-3 h-100" style="background:#22163D;">
 
-                    <h2 class="text-uppercase mt-3 font-weight-bold text-white">Message Us</h2>
+                    <h2 class="text-uppercase mt-5 font-weight-bold text-white ">Message Us</h2>
                     <form action="">
                         <div class="row">
                             <div class="col-lg-6">
