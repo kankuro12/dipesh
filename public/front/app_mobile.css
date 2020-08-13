@@ -1,5 +1,5 @@
-@media only screen and (max-width: 480px),
-only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 992px),
+only screen and (max-device-width: 992px) {
     .down {
         margin-top: 0px;
     }
@@ -10,5 +10,33 @@ only screen and (max-device-width: 480px) {
 
     .top-header {
         background: rgba(0, 0, 0, 0.8);
+    }
+
+    .cta-image {
+        margin-top: 3rem;
+    }
+
+    .cta-button {
+        margin-bottom: 2em;
+
+    }
+
+    .cta-margin {
+        padding-top: 2rem;
+    }
+
+    #cta1 {
+        text-align: center;
+    }
+
+
+    #contact {
+        padding: 1.1rem 0;
+    }
+
+    .center {
+        margin-top: 15px;
+        position: relative;
+        text-align: center;
     }
 }

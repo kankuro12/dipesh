@@ -88,7 +88,6 @@ class FrontendController extends Controller
         $service->title = $request->title;
         $service->description = $request->description;
         $service->image = $request->file('image')->store('sliders');
-
         $service->save();
 
         return redirect()->back();

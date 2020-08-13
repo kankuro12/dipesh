@@ -1,7 +1,6 @@
 .carousel-item {
     height: 100vh;
-    animation-name: example;
-    animation-duration: 5s;
+    animation: 5s example infinite;
 }
 
 @keyframes example {
@@ -49,7 +48,6 @@ a.nav-link {
 
 .nav-link.active {
     border-bottom: 2px solid gold;
-
 }
 
 .navbar-brand>img {
@@ -65,12 +63,11 @@ a.nav-link {
     background-size: 100% 100% !important;
 }
 
-
 /* portfollio */
 .header {
     font-size: 2rem;
     font-family: "Poppins", sans-serif;
-    color: #2D2D2D;
+    color: #2d2d2d;
 }
 
 .header>span {
@@ -79,7 +76,7 @@ a.nav-link {
 }
 
 #portfolio {
-    background: #E1E1E1;
+    background: #e1e1e1;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
 }
@@ -116,6 +113,98 @@ a.nav-link {
 /* services */
 #services {
     min-height: 100vh;
-    background: linear-gradient(0deg, rgba(225, 225, 225, 1) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(225, 225, 225, 1) 100%);
+    background: white;
+}
 
+
+/*cta1*/
+#cta1 {
+    background: #5a50ff;
+    min-height: 100vh;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+
+.cta-title {
+    color: #b2a2ff;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.cta-head {
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 0px 5px 20px rgb(59 50 109);
+    margin-bottom: 1.5rem;
+}
+
+.cta-desc {
+    color: #b2a2ff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    border-radius: 0;
+    -webkit-box-shadow: 4px 5px 20px 3px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 4px 5px 20px 3px rgba(50, 50, 50, 0.75);
+    box-shadow: 4px 5px 20px 3px rgba(50, 50, 50, 0.75);
+    font-weight: 700;
+    color: #5a50ff;
+    font-size: 1rem;
+}
+
+.grid-center {
+    justify-content: center;
+    align-content: center;
+}
+
+.cta-margin {
+    padding-top: 12rem;
+}
+
+.cta-image {
+    margin-top: -5rem;
+}
+
+
+/* contact */
+
+#contact {
+    background: #0D46B4;
+    font-family: "Poppins",
+        sans-serif;
+    padding: 12rem 0;
+
+}
+
+.fas {
+
+    color: #8B5CFF;
+    margin-right: 10PX;
+}
+
+.fab {
+
+    color: #8B5CFF;
+    margin: 5px 15PX;
+}
+
+.test {
+    background: rgb(37, 79, 212);
+    background: linear-gradient(185deg, rgba(37, 79, 212, 1) 0%, rgba(79, 80, 246, 1) 55%, rgba(37, 79, 212, 0.11) 100%);
 }

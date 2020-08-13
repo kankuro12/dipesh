@@ -13,8 +13,7 @@
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/9ab15cc71e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
@@ -92,7 +91,12 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
                             explicabo sit fuga amet, esse illo aspernatur quo placeat
                         </p>
-                        <p style="color: white;">address heere and now where</p>
+                        <p style="color: white;">
+                            Maitidevi Kathmandu, Nepal
+                            <a style="text-decoration: none;color:#F8DC50;cursor:pointer;font-weight:700;" href="#">
+                                View in map
+                            </a>
+                        </p>
                     </div>
                     <div class="col-md-6 text-right down" style="vertical-align: middle;">
                         <a data-scroll href="#portfolio"><img src="{{asset('front/down.png')}}" /></a>
@@ -103,8 +107,9 @@
 
     </div>
     @include('front.portfolio')
+    @include('front.cta')
     @include('front.services')
-
+    @include('front.contact')
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

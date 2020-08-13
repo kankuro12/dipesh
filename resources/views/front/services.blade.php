@@ -3,26 +3,37 @@
         <div class="container">
             <h1 class="text-center header mb-3">
                 <span>
-                    OUR Services
+                    Our Services
                 </span>
             </h1>
 
+            <?php $i=1;?>
+            @foreach (\App\Services::all() as $item)
             <div class="row mt-5">
-                @foreach (\App\Services::all() as $item)
+                <div class="col-md-6 mb-3 mt-3 {{$i%2==0?"d-block d-md-none":""}} ">
+                    <img src="{{asset($item->image)}}" class="w-100">
+                </div>
+                <div class="col-md-6 {{$i%2==0?"text-right":"text-left"}}">
+                    <div class="center">
 
-                <div class="col-md-4 mb-3 ">
-                    <div class="h-100 w-100 overlay-wrapper">
-                        <img src="{{asset($item->image)}}" class="w-100 h-100">
-                        <h4 class="text-center">{{$item->title}}</h4>
-                        <div class="overlay p-3">
-                            <div class="overlay-child">
-                                {{$item->description}}
-                            </div>
+                        <h4 style="color:#67648F;">{{$item->title}}</h4>
+                        <div>
+                            {{$item->description}}
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @if($i%2==0)
+                <div class="col-md-6 mb-3 mt-3 d-none d-md-block">
+                    <img src="{{asset($item->image)}}" class="w-100">
+                </div>
+                @endif
             </div>
+
+            <div class="text-center pt-5 pb-5">
+                <div style="width:20%;height:2px;background:#b0b0b0;display:inline-block;opacity:0.2"></div>
+            </div>
+            <?php $i+=1;?>
+            @endforeach
         </div>
     </div>
 </div>
