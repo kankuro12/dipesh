@@ -39,4 +39,8 @@ only screen and (max-device-width: 992px) {
         position: relative;
         text-align: center;
     }
+
+    .carousel-item {
+        animation: none;
+    }
 }
