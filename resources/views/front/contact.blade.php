@@ -34,31 +34,34 @@
                 <div class="p-5 h-100" style="background:#22163D;">
 
                     <h2 class="text-uppercase mt-2 font-weight-bold text-white ">Message Us</h2>
-                    <form action="">
+                    <form action="{{url('message')}}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control mt-2" placeholder="Name" required>
+                                    <input type="text" name="name" class="form-control mt-2" placeholder="Name"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control mt-2" placeholder="Address" required>
+                                    <input type="text" name="address" class="form-control mt-2" placeholder="Address">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control mt-2" placeholder="Email" required>
+                                    <input type="email" name="email" class="form-control mt-2" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="number" class="form-control mt-2" placeholder="Phone" required>
+                                    <input type="number" name="phone" class="form-control mt-2" placeholder="Phone"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                    <textarea name="msg" class="form-control" id="exampleFormControlTextarea1"
                                         placeholder="Message" rows="3" required></textarea>
                                 </div>
                             </div>

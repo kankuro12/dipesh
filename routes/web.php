@@ -16,22 +16,9 @@ Route::get('/', function () {
     return view('front.index');
 });
 
-Route::get('/gall/{id}', function ($id) {
-    $images = \App\images::where('gallery_id', $id)->get();
-    $i = [];
-    $driver = env('FILESYSTEM_DRIVER', 'public');
-    foreach ($images as $image) {
-        $path = Storage::disk($driver)->path($image->path);
-        $im = [];
-        $im['path'] = $image->path;
-        $data = getimagesize($path);
-        $im['w'] = $data[0];
-        $im['h'] = $data[1];
-        array_push($i, $im);
-    }
+Route::get('/gall/{id}', 'StaticController@gallery');
 
-    return view('front.gallery', ["images" => $i]);
-});
+Route::post('message', 'StaticController@msg');
 
 
 Route::get('/billing/api/{id}', 'ApiController@billingApi');

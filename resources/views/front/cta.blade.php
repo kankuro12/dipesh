@@ -20,7 +20,8 @@
                         ut natus, dolorum quod ipsa eum accusantium?
                     </p>
                     <div class="cta-btn-wrapper">
-                        <button class="pt-2 pb-2 pr-5 pl-5 btn bg-white cta-button">Contact Us</button>
+                        <a class="pt-2 pb-2 pr-5 pl-5 btn bg-white cta-button" data-scroll href="#contact">Contact
+                            Us</a>
                     </div>
 
                 </div>
